@@ -1,4 +1,9 @@
-# Memos
+### Memos
+This is brief memos for setup GTX 1080 Ti in Ubuntu 16.04 LST.
+
+###
+
+
 
 
 ### CUI
