@@ -6,10 +6,13 @@ OUTDIR_KERAS = ../keras
 message:
 	echo "specify what you want to do"
 
+
 basic:
+	sudo add-apt-repository ppa:graphics-drivers/ppa
 	sudo apt-get update
 	sudo apt-get install -y g++
 	sudo apt-get install -y git
+
 
 blacklist:
 	echo ""                           > test.txt
@@ -24,14 +27,17 @@ blacklist:
 	sudo mv test2.txt /etc/modprobe.d/nouveau-kms.conf
 	sudo update-initramfs -u
 
+
 texton:
-	sudo grep -l 'splash' /etc/default/grub | sudo xargs sed -i.bak -e 's/splash/splash text/g'
-	sudo update-grub
+	sudo systemctl set-default multi-user.target
 	sudo reboot
+	
 
 cudainstall:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
+	sudo apt-get install nvidia-378
 	sudo sh cuda_8.0.61_375.26_linux-run
+
 
 cudaecho:
 	echo ""                                                                     >> ~/.bashrc
@@ -40,14 +46,16 @@ cudaecho:
 	echo "export PATH=/usr/local/cuda-8.0/bin:\$$PATH"                          >> ~/.bashrc
 	echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$$LD_LIBRARY_PATH"   >> ~/.bashrc
 
+
 textoff:
-	sudo grep -l 'splash text' /etc/default/grub | sudo xargs sed -i.bak -e 's/splash text/splash/g'
-	sudo update-grub
+	sudo systemctl set-default graphical.target	
 	sudo reboot
+
 
 cudnn:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
+
 
 anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
@@ -63,6 +71,3 @@ pip:
 
 git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
-
-clean:
-	rm -rf *~ .*~
