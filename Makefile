@@ -3,18 +3,18 @@
 OUTDIR_KERAS = ../keras
 #INSDIR_KERAS = ./keras
 
-message:
+0message:
 	echo "specify what you want to do"
 
 
-basic:
+1basic:
 	sudo add-apt-repository ppa:graphics-drivers/ppa
 	sudo apt-get update
 	sudo apt-get install -y g++
 	sudo apt-get install -y git
 
 
-blacklist:
+2blacklist:
 	echo ""                           > test.txt
 	echo "blacklist nouveau"          >> test.txt
 	echo "blacklist lbm-nouveau"      >> test.txt
@@ -28,18 +28,18 @@ blacklist:
 	sudo update-initramfs -u
 
 
-texton:
+3texton:
 	sudo systemctl set-default multi-user.target
 	sudo reboot
 	
 
-cudainstall:
+4cudainstall:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
 	sudo apt-get install nvidia-378
 	sudo sh cuda_8.0.61_375.26_linux-run
 
 
-cudaecho:
+5cudaecho:
 	echo ""                                                                     >> ~/.bashrc
 	echo ""                                                                     >> ~/.bashrc
 	echo "#Added by Tomonori12 DL-Environment-Autosetup"                         >> ~/.bashrc
@@ -47,27 +47,27 @@ cudaecho:
 	echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$$LD_LIBRARY_PATH"   >> ~/.bashrc
 
 
-textoff:
+6textoff:
 	sudo systemctl set-default graphical.target	
 	sudo reboot
 
 
-cudnn:
+7cudnn:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 
 
-anainstall:
+8anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
 	bash ./Anaconda3-4.3.0-Linux-x86_64.sh
 	# source ~/.bashrc
 	sudo reboot
 
-pip:
+9pip:
 	pip install keras
 	pip install tensorflow
 	pip install tensorflow-gpu
 	pip install theano
 
-git:
+10git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
