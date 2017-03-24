@@ -41,7 +41,7 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
   
 ### 10. Open terminal and move to "DL_folder" again.
 
-### 11. Type ```sudo make 7cudnn``` in terminal.
+### 11. Type ```make 7cudnn``` in terminal.
 
   - This will install cuDNN library.
 
