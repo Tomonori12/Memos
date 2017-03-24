@@ -8,8 +8,7 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
 ### 2. Open terminal and move to "DL_folder". (E.g. ```cd ./DL_folder```)
 
 ### 3. Type ```sudo make 1basic``` in terminal.
-
-  - This step adds a repository for the nvidia drivers.
+  - ~~This step adds a repository for the nvidia drivers.~~
   - Also this will get g++ and git libraries installed on your machine.  If you already have those ones, instalations will be skipped.
 
 ### 4. Type ```sudo make 2blacklist``` in termianl.
