@@ -8,7 +8,7 @@ OUTDIR_KERAS = ../keras
 
 
 1basic:
-	sudo add-apt-repository ppa:graphics-drivers/ppa
+	#sudo add-apt-repository ppa:graphics-drivers/ppa
 	sudo apt-get update
 	sudo apt-get install -y g++
 	sudo apt-get install -y git
@@ -35,8 +35,10 @@ OUTDIR_KERAS = ../keras
 
 4cudainstall:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
-	sudo apt-get install nvidia-378
+	#sudo apt-get install nvidia-378
+	wget http://us.download.nvidia.com/XFree86/Linux-x86_64/378.13/NVIDIA-Linux-x86_64-378.13.run
 	sudo sh cuda_8.0.61_375.26_linux-run
+	sudo sh NVIDIA-Linux-x86_64-378.13.run
 
 
 5cudaecho:
