@@ -29,7 +29,7 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
   - *Just before the instalation process starts, you need to type in your superuser password.*
   - Nvidia-378 driver will be used for 1080 Ti.
   - To install cuda, you need to follow the screen guides and basically type in as below:
-    -   accept > **n** > y > y > ```Enter``` > y > y > ```Enter```
+    -   accept > **n** > y > y > y > ```Enter``` > y > y > ```Enter```
 
 ### 8. Type ```sudo make 5cudaecho``` soon after you install cuda.
 
