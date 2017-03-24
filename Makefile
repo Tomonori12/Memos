@@ -73,7 +73,6 @@ OUTDIR_KERAS = ../keras
 	pip install keras
 	pip install tensorflow
 	pip install tensorflow-gpu
-	pip install theano
 
 10git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
