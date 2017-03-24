@@ -29,6 +29,8 @@ OUTDIR_KERAS = ../keras
 
 
 3texton:
+	sudo grep -l 'quiet splash' /etc/default/grub | sudo xargs sed -i.bak -e 's/quiet splash/text/g'
+	sudo update-grub
 	sudo systemctl set-default multi-user.target
 	sudo reboot
 	
@@ -50,6 +52,8 @@ OUTDIR_KERAS = ../keras
 
 
 6textoff:
+	sudo grep -l 'text' /etc/default/grub | sudo xargs sed -i.bak -e 's/text/quiet splash/g'
+	sudo update-grub
 	sudo systemctl set-default graphical.target	
 	sudo reboot
 
