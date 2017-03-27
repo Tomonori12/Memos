@@ -37,6 +37,7 @@ OUTDIR_KERAS = ../keras
 
 4cudainstall:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
+	#cuda download list: http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
 	#sudo apt-get install nvidia-378
 	wget http://us.download.nvidia.com/XFree86/Linux-x86_64/378.13/NVIDIA-Linux-x86_64-378.13.run
 	sudo sh cuda_8.0.61_375.26_linux-run
