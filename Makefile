@@ -33,23 +33,36 @@ texton:
 	sudo update-grub
 	sudo systemctl set-default multi-user.target
 	sudo reboot
-	
 
-cudainstall:
-	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
-	#cuda download list: http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
+nvidia-driver:
 	#sudo apt-get install nvidia-378
 	wget http://us.download.nvidia.com/XFree86/Linux-x86_64/378.13/NVIDIA-Linux-x86_64-378.13.run
-	sudo sh cuda_8.0.61_375.26_linux-run
 	sudo sh NVIDIA-Linux-x86_64-378.13.run
 
-
-cudaecho:
+cuda8.0:
+	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
+	sudo sh cuda_8.0.61_375.26_linux-run
 	echo ""                                                                     >> ~/.bashrc
 	echo ""                                                                     >> ~/.bashrc
-	echo "#Added by Tomonori12 DL-Environment-Autosetup"                         >> ~/.bashrc
+	echo ""                                                                     >> ~/.bashrc
+	echo "#----------------------------------------------------------"          >> ~/.bashrc
+	echo "# Added by Tomonori12 DL-Environment-Autosetup"                       >> ~/.bashrc
+	echo "#----------------------------------------------------------"          >> ~/.bashrc
 	echo "export PATH=/usr/local/cuda-8.0/bin:\$$PATH"                          >> ~/.bashrc
 	echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:\$$LD_LIBRARY_PATH"   >> ~/.bashrc
+
+
+cuda7.5:
+	wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
+	sudo sh cuda_7.5.18_linux.run
+	echo ""                                                                     >> ~/.bashrc
+	echo ""                                                                     >> ~/.bashrc
+	echo ""                                                                     >> ~/.bashrc
+	echo "#----------------------------------------------------------"          >> ~/.bashrc
+	echo "# Added by Tomonori12 DL-Environment-Autosetup"                       >> ~/.bashrc
+	echo "#----------------------------------------------------------"          >> ~/.bashrc
+	echo "export PATH=/usr/local/cuda-7.5/bin:\$$PATH"                          >> ~/.bashrc
+	echo "export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:\$$LD_LIBRARY_PATH" >> ~/.bashrc
 
 
 textoff:
