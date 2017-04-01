@@ -96,4 +96,4 @@ git:
 	
 mnist_cnn:
 	cd $(OUTDIR_KERAS)
-	python keras/example/mnist_cnn.py
+	python keras/examples/mnist_cnn.py
