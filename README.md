@@ -7,15 +7,15 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
 
 ### 2. Open terminal and move to "DL_folder". (E.g. ```cd ./DL_folder```)
 
-### 3. Type ```sudo make 1basic``` in terminal.
+### 3. Type ```sudo make basic``` in terminal.
   - ~~This step adds a repository for the nvidia drivers.~~
   - Also this will get g++ and git libraries installed on your machine.  If you already have those ones, instalations will be skipped.
 
-### 4. Type ```sudo make 2blacklist``` in termianl.
+### 4. Type ```sudo make blacklist``` in termianl.
 
   - This will stop nouveau display driver, which is an open source display driver, but not originally from nvidia.
   
-### 5. Type ```sudo make 3texton``` in terminal.
+### 5. Type ```sudo make texton``` in terminal.
 
   - This will force you to reboot as CUI mode to install a nvidia original display driver.
   
@@ -23,7 +23,7 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
 
   - Only text massage will appear on the screen.
 
-### 7. Move to "DL_folder" and type ```make 4cudainstall``` in CUI.
+### 8. Move to "DL_folder" and type ```make cuda8.0 or cuda7.5``` in CUI.
 
   - It will take sometime to download and install cuda.  Cuda is about 1.4Gb, so be patient.
   - *Just before the instalation process starts, you need to type in your superuser password.*
@@ -31,32 +31,32 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
   - To install cuda, you need to follow the screen guides and basically type in as below:
     -   accept > **n** > y > y > y > ```Enter``` > y > y > ```Enter```
 
-### 8. Type ```sudo make 5cudaecho``` soon after you install cuda.
+### 9. Type ```sudo make cudaecho``` soon after you install cuda.
 
   - This is to configure a path for cuda. 
   
-### 9. Type ```sudo make 6textoff``` to return GUI.
+### 10. Type ```sudo make textoff``` to return GUI.
 
   - Now the computer starts rebooting.
   
-### 10. Open terminal and move to "DL_folder" again.
+### 11. Open terminal and move to "DL_folder" again.
 
-### 11. Type ```make 7cudnn``` in terminal.
+### 12. Type ```make cudnn``` in terminal.
 
   - This will install cuDNN library.
 
-### 12. Type ```make 8anainstall``` in terminal
+### 13. Type ```make anainstall``` in terminal
 
   - This step is to download and install Anaconda.  Anaconda is ~500Mb.
   - To install anaconda, you need to follow guides.
     - ```Enter``` >  ```yes``` > ```Enter``` > ```yes```
   - If you don't mind, better select ```yes``` to set a path to Anaconda's python.
 
-### 13. Type ```make 9pip``` in terminal.
+### 14. Type ```make pip``` in terminal.
 
   - Now you install all required packages for deep learning.
 
-### 14. Type ```make 10git``` in terminal.
+### 15. Type ```make git``` in terminal.
 
   - Now you can test your platform. (E.g. ```python ../keras/example/mnist_cnn.py```)
 
