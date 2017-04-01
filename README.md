@@ -22,28 +22,30 @@ This repository includes this readme and a Makefile.  The Makefile allows you to
 ### 6. Now you're in CUI, right?  Try to login your account.
 
   - Only text massage will appear on the screen.
+  
+### 7. Install the nvidia driver for 1080Ti ```make nvidia-diriver```.
 
-### 8. Move to "DL_folder" and type ```make cuda8.0 or cuda7.5``` in CUI.
+  - Follow the instration screen.  Select ```Yes``` for X Window activation.
+  
+### 8. Move to "DL_folder" and type ```make cuda8.0 (or cuda7.5)``` in CUI.
 
   - It will take sometime to download and install cuda.  Cuda is about 1.4Gb, so be patient.
-  - *Just before the instalation process starts, you need to type in your superuser password.*
-  - Nvidia-378 driver will be used for 1080 Ti.
+  - While instalation **DON'T INSTALL NVIDIA DRIVER!!!** The driver has already installed in step 7.
   - To install cuda, you need to follow the screen guides and basically type in as below:
     -   accept > **n** > y > y > y > ```Enter``` > y > y > ```Enter```
 
-### 9. Type ```sudo make cudaecho``` soon after you install cuda.
-
-  - This is to configure a path for cuda. 
-  
-### 10. Type ```sudo make textoff``` to return GUI.
+### 9. Type ```sudo make textoff``` to return GUI.
 
   - Now the computer starts rebooting.
   
-### 11. Open terminal and move to "DL_folder" again.
+### 10. Open terminal and move to "DL_folder" again.
 
-### 12. Type ```make cudnn``` in terminal.
+### 11. Type ```make cudnn5.1cuda8.0 (or cudnn5.1cuda7.5)``` in terminal.
 
   - This will install cuDNN library.
+  - Select appropriate version for your cuda. 
+     - cudnn5.1cuda8.0 for cuda8.0
+     - cudnn5.1cuda7.5 for cuda7.5
 
 ### 13. Type ```make anainstall``` in terminal
 
