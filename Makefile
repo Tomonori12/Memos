@@ -72,10 +72,13 @@ textoff:
 	sudo reboot
 
 
-cudnn:
+cudnn5.1cuda8.0:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 
+cuda5.1cuda7.5:
+	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda7.5_amd64.deb
+	sudo dpkg -i libcudnn5_5.1.10-1+cuda7.5_amd64.deb
 
 anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
