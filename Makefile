@@ -3,18 +3,18 @@
 OUTDIR_KERAS = ../keras
 #INSDIR_KERAS = ./keras
 
-0message:
+message:
 	echo "specify what you want to do"
 
 
-1basic:
+basic:
 	#sudo add-apt-repository ppa:graphics-drivers/ppa
 	sudo apt-get update
 	sudo apt-get install -y g++
 	sudo apt-get install -y git
 
 
-2blacklist:
+blacklist:
 	echo ""                           > test.txt
 	echo "blacklist nouveau"          >> test.txt
 	echo "blacklist lbm-nouveau"      >> test.txt
@@ -28,14 +28,14 @@ OUTDIR_KERAS = ../keras
 	sudo update-initramfs -u
 
 
-3texton:
+texton:
 	sudo grep -l 'quiet splash' /etc/default/grub | sudo xargs sed -i.bak -e 's/quiet splash/quiet text/g'
 	sudo update-grub
 	sudo systemctl set-default multi-user.target
 	sudo reboot
 	
 
-4cudainstall:
+cudainstall:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
 	#cuda download list: http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
 	#sudo apt-get install nvidia-378
@@ -44,36 +44,36 @@ OUTDIR_KERAS = ../keras
 	sudo sh NVIDIA-Linux-x86_64-378.13.run
 
 
-5cudaecho:
+cudaecho:
 	echo ""                                                                     >> ~/.bashrc
 	echo ""                                                                     >> ~/.bashrc
 	echo "#Added by Tomonori12 DL-Environment-Autosetup"                         >> ~/.bashrc
 	echo "export PATH=/usr/local/cuda-8.0/bin:\$$PATH"                          >> ~/.bashrc
-	echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$$LD_LIBRARY_PATH"   >> ~/.bashrc
+	echo "export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:\$$LD_LIBRARY_PATH"   >> ~/.bashrc
 
 
-6textoff:
+textoff:
 	sudo grep -l 'quiet text' /etc/default/grub | sudo xargs sed -i.bak -e 's/quiet text/quiet splash/g'
 	sudo update-grub
 	sudo systemctl set-default graphical.target	
 	sudo reboot
 
 
-7cudnn:
+cudnn:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 
 
-8anainstall:
+anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
 	bash ./Anaconda3-4.3.0-Linux-x86_64.sh
 	# source ~/.bashrc
 	sudo reboot
 
-9pip:
+pip:
 	pip install keras
 	pip install tensorflow
 	pip install tensorflow-gpu
 
-10git:
+git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
