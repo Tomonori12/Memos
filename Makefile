@@ -76,7 +76,7 @@ cudnn5.1cuda8.0:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 
-cuda5.1cuda7.5:
+cudnn5.1cuda7.5:
 	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda7.5_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda7.5_amd64.deb
 
@@ -93,7 +93,7 @@ pip:
 
 git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
-	
+
 mnist_cnn:
 	cd $(OUTDIR_KERAS)
 	python keras/examples/mnist_cnn.py
