@@ -33,7 +33,7 @@ texton:
 	sudo update-grub
 	sudo systemctl set-default multi-user.target
 	sudo reboot
-
+6
 nvidia-driver:
 	#sudo apt-get install nvidia-378
 	wget http://us.download.nvidia.com/XFree86/Linux-x86_64/378.13/NVIDIA-Linux-x86_64-378.13.run
@@ -43,8 +43,7 @@ cuda8.0:
 	wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
 	sudo sh cuda_8.0.61_375.26_linux-run
 	echo ""                                                                     >> ~/.bashrc
-	echo ""                                                                     >> ~/.bashrc
-	echo ""                                                                     >> ~/.bashrc
+	echo ""                                                                     >> ~/.bashrc	echo ""                                                                     >> ~/.bashrc
 	echo "#----------------------------------------------------------"          >> ~/.bashrc
 	echo "# Added by Tomonori12 DL-Environment-Autosetup"                       >> ~/.bashrc
 	echo "#----------------------------------------------------------"          >> ~/.bashrc
@@ -73,11 +72,11 @@ textoff:
 
 
 cudnn5.1cuda8.0:
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
+	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
 
 cudnn5.1cuda7.5:
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda7.5_amd64.deb
+	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn5_5.1.10-1+cuda7.5_amd64.deb
 	sudo dpkg -i libcudnn5_5.1.10-1+cuda7.5_amd64.deb
 
 anainstall:
