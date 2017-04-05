@@ -72,24 +72,28 @@ textoff:
 	sudo reboot
 
 cudnn5.1cuda8.0:
-	#http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn5_5.1.10-1+cuda8.0_amd64.deb
-	sudo dpkg -i libcudnn5_5.1.10-1+cuda8.0_amd64.deb
+	tar xzvf cudnn-8.0-linux-x64-v5.1.tgz 
+	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
+	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
+	sudo ldconfig
 
 cudnn6.0cuda8.0:
-	#http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/libcudnn6_6.0.20-1+cuda8.0_amd64.deb
-	sudo dpkg -i libcudnn6_6.0.20-1+cuda8.0_amd64.deb
-
+	tar xzvf cudnn-8.0-linux-x64-v6.0.tgz 
+	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
+	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
+	sudo ldconfig
 
 cudnn5.1cuda7.5:
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn5_5.1.10-1+cuda7.5_amd64.deb
-	sudo dpkg -i libcudnn5_5.1.10-1+cuda7.5_amd64.deb
-
-
+	tar xzvf cudnn-7.5-linux-x64-v5.1.tgz 
+	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
+	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
+	sudo ldconftar xzvf cudnn-8.0-linux-x64-v5.1.tgz 
+	
 cudnn6.0cuda7.5:
-	wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcudnn6_6.0.20-1+cuda7.5_amd64.deb
-	sudo dpkg -i libcudnn6_6.0.20-1+cuda7.5_amd64.deb
+	tar xzvf cudnn-7.5-linux-x64-v6.0.tgz 
+	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
+	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
+	sudo ldconfig
 
 anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
