@@ -7,8 +7,8 @@ message:
 	echo "specify what you want to do"
 
 
+#sudo add-apt-repository ppa:graphics-drivers/ppa
 basic:
-	#sudo add-apt-repository ppa:graphics-drivers/ppa
 	sudo apt-get update
 	sudo apt-get install -y g++
 	sudo apt-get install -y git
@@ -34,8 +34,8 @@ texton:
 	sudo systemctl set-default multi-user.target
 	sudo reboot
 
+#sudo apt-get install nvidia-378
 nvidia-driver:
-	#sudo apt-get install nvidia-378
 	wget http://us.download.nvidia.com/XFree86/Linux-x86_64/378.13/NVIDIA-Linux-x86_64-378.13.run
 	sudo sh NVIDIA-Linux-x86_64-378.13.run
 
@@ -88,7 +88,7 @@ cudnn5.1cuda7.5:
 	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
 	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
 	sudo ldconftar xzvf cudnn-8.0-linux-x64-v5.1.tgz 
-	
+
 cudnn6.0cuda7.5:
 	tar xzvf cudnn-7.5-linux-x64-v6.0.tgz 
 	sudo cp -a cuda/lib64/* /usr/local/cuda-8.0/lib64/
@@ -98,7 +98,6 @@ cudnn6.0cuda7.5:
 anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
 	bash ./Anaconda3-4.3.0-Linux-x86_64.sh
-	# source ~/.bashrc
 	sudo reboot
 
 pip:
