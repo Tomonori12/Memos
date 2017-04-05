@@ -95,6 +95,11 @@ cudnn6.0cuda7.5:
 	sudo cp -a cuda/include/* /usr/local/cuda-8.0/include/
 	sudo ldconfig
 
+cudnn-remove:
+	sudo rm /usr/local/cuda-8.0/lib64/libcudnn*
+	sudo rm /usr/local/cuda-8.0/include/cudnn.h
+	sudo ldconfig
+
 anainstall:
 	wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
 	bash ./Anaconda3-4.3.0-Linux-x86_64.sh
