@@ -10,7 +10,6 @@ message:
 #sudo add-apt-repository ppa:graphics-drivers/ppa
 basic:
 	sudo apt-get update
-	sudo apt-get install -y g++
 	sudo apt-get install -y git
 
 
