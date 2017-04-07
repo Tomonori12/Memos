@@ -114,5 +114,4 @@ git:
 	git clone https://github.com/fchollet/keras $(OUTDIR_KERAS)
 
 mnist_cnn:
-	cd $(OUTDIR_KERAS)
-	python keras/examples/mnist_cnn.py
+	cd $(OUTDIR_KERAS); python ./examples/mnist_cnn.py
